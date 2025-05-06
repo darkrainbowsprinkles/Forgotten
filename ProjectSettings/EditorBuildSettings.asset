@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: d84c19bb407af2248ae6d10a0ce97ee6
   - enabled: 1
-    path: Assets/Scenes/AbandonedHospital/AbandonedHospital.unity
+    path: Assets/Scenes/AbandonedHospital.unity
     guid: b3c2aa0b5f789974cacd8d7f3cf0d772
   - enabled: 1
     path: Assets/Scenes/FinalScene.unity
