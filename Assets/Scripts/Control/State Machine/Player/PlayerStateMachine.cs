@@ -10,8 +10,31 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public PlayerHealth PlayerHealth { get; private set; }
 
     [field: Header("Values")]
-    [field: SerializeField] [field: Range(0.1f, 100f)] private float FreeMouseSensitivity { get; set; }
-    [field: SerializeField] [field: Range(0.1f, 100f)] private float ADSMouseSensitivity { get; set; }
+    [field: SerializeField] [field: Range(0.1f, 100f)] private float freeMouseSensitivity = 10f;
+    [field: SerializeField] [field: Range(0.1f, 100f)] private float adsMouseSensitivity = 5f;
+
+    public float FreeMouseSensitivity
+    {
+        get => freeMouseSensitivity;
+        set
+        {
+            freeMouseSensitivity = value;
+            if (!isADS) MouseSensitivity = value;
+        }
+    }
+
+    public float ADSMouseSensitivity
+    {
+        get => adsMouseSensitivity;
+        set
+        {
+            adsMouseSensitivity = value;
+            if (isADS) MouseSensitivity = value;
+        }
+    }
+
+    private bool isADS = false;
+
     [field: SerializeField] [field: Range(0.1f, 10f)] public float JumpForce { get; private set; }
     [field: SerializeField] [field: Range(0.1f, 20f)] public float FreeMovementSpeed { get; private set; }
 
@@ -47,11 +70,13 @@ public class PlayerStateMachine : StateMachine
 
     private void HandleADS()
     {
+        isADS = true;
         MouseSensitivity = ADSMouseSensitivity;
     }
 
     private void HandleADSCancel()
     {
+        isADS = false;
         MouseSensitivity = FreeMouseSensitivity;
     }
 

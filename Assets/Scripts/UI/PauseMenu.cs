@@ -8,9 +8,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Canvas pauseMenuCanvas;
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
-
     public static bool GameIsPaused = false;
-
 
     private void OnEnable()
     {
@@ -27,6 +25,7 @@ public class PauseMenu : MonoBehaviour
         resumeButton.onClick.RemoveListener(Resume);
         mainMenuButton.onClick.RemoveListener(LoadMainMenu);
     }
+
 
     private void HandlePause()
     {
