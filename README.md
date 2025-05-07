@@ -1,5 +1,7 @@
-# Forgotten
-Forgotten is a horror survival first person shooter experience inspired by classic indie titles.
+
+![Forgotten Banners (2)](https://github.com/user-attachments/assets/abbe2765-b1c1-4e05-9eec-6a94ca2a9e58)
+
+Forgotten is a Horror Survival First Person Shooter inspired by classic indie titles.
 
 Use your shooting and strategy abilities to get out from a creepy abandoned hospital, nobody knows why it was abandoned though... some say unknown creatures live within the facility, better get out as quickly as you can.
 ## Gameplay Overview:
