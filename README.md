@@ -1,14 +1,22 @@
 
-![Forgotten Banners (2)](https://github.com/user-attachments/assets/abbe2765-b1c1-4e05-9eec-6a94ca2a9e58)
+<img width="2560" height="1440" alt="FORGOTTEN" src="https://github.com/user-attachments/assets/7c49883e-4657-4d40-a6ef-e2c5221b9c53" />
 
-Forgotten is a Horror Survival First Person Shooter inspired by classic indie titles.
+Forgotten is a first-person horror survival shooter inspired by classic indie staples like Slender: The Eight Pages.
+Built as a beginner-intermediate Unity learning project, it focuses on atmosphere, tension, and resource-limited decision-making.
 
-Use your shooting and strategy abilities to get out from a creepy abandoned hospital, nobody knows why it was abandoned though... some say unknown creatures live within the facility, better get out as quickly as you can.
+You wake up inside a deserted, decaying hospital with no memory of how you got there.
+The place was abandoned without explanation… though rumors whisper of unnatural creatures now roaming the halls.
+
+Armed with only your wits and scarce ammunition, you must explore, manage your resources, and survive long enough to escape. Every shadow feels alive… and every step might attract something lurking in the dark.
+
 ## Gameplay Overview:
-![image](https://user-images.githubusercontent.com/113314204/201565747-f8d707a6-862a-4104-8913-bfa4dd652616.png)
-![image](https://user-images.githubusercontent.com/113314204/201566004-a30de95b-c1d7-403b-bef2-32f063d25bc5.png)
-![image](https://user-images.githubusercontent.com/113314204/201566218-ec6ccad5-62f1-4b4a-b27f-a8306efd7219.png)
-![image](https://user-images.githubusercontent.com/113314204/201566531-5be3f003-6cfc-49e5-8e2c-395bae8c5e50.png)
+<img width="1908" height="883" alt="image" src="https://github.com/user-attachments/assets/dabd5eb6-459d-4ca3-a520-e84cf31be1ef" />
+<img width="1825" height="851" alt="image" src="https://github.com/user-attachments/assets/44cd1ab0-81fb-4db9-a92f-32a1724f6691" />
+<img width="1820" height="840" alt="image" src="https://github.com/user-attachments/assets/72fe63fa-b18a-48a7-b07d-51d222acf20a" />
+<img width="1823" height="845" alt="image" src="https://github.com/user-attachments/assets/07157c99-b5da-4095-959f-ae37387a6756" />
+<img width="1828" height="843" alt="image" src="https://github.com/user-attachments/assets/ffc4e9b3-d861-49b7-8112-1a406c157757" />
+<img width="1910" height="887" alt="image" src="https://github.com/user-attachments/assets/526afb27-ab36-4350-be06-df5128b911b8" />
+
   
 ## Play Test:
   - [Last Release](https://github.com/darkrainbowsprinkles/Forgotten/releases/tag/v1.0.1)
