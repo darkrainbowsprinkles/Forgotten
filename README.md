@@ -19,5 +19,8 @@ Armed with only your wits and scarce ammunition, you must explore, manage your r
 
   
 ## Play Test:
-  - [Last Release](https://github.com/darkrainbowsprinkles/Forgotten/releases/tag/v1.0.1)
+  - [Forgotten releases](https://github.com/darkrainbowsprinkles/Forgotten/releases)
+
+## Other Links:
+  - [Itchio Game Page](https://itsdarkrainbowsprinkles.itch.io/forgotten)
 
