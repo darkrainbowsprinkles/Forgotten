@@ -1,3 +1,4 @@
+using System.Data;
 using UnityEngine;
 
 public class PlayerFreeLookState : PlayerBaseState
@@ -16,7 +17,14 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         Vector3 movement = CalculateMovement();
 
-        Move(movement * stateMachine.FreeMovementSpeed, deltaTime);
+        float movementSpeed = stateMachine.FreeMovementSpeed;
+
+        if (stateMachine.InputReader.IsSprinting)
+        {
+            movementSpeed *= stateMachine.SprintMultiplier;
+        }
+
+        Move(movement * movementSpeed, deltaTime);
 
         MouseRotation(stateMachine.InputReader.MouseValue, deltaTime);
     }

@@ -10,10 +10,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public float ScrollWheelValue { get; private set; }
 
-    public delegate IEnumerator FireEventHandler();
-
     public event Action JumpEvent;
-    public event FireEventHandler FireEvent;
     public event Action ADSEvent;
     public event Action ADSCancelEvent;
     public event Action FirstSlotEvent;
@@ -22,6 +19,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action ScrollWheelEvent;
     public event Action PauseEvent;
 
+    public bool IsSprinting;
+    public bool IsFiring;
 
     private Controls controls;
 
@@ -58,11 +57,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public void OnFire(InputAction.CallbackContext context)
     {
-        if(!context.performed) { return; }
-
-        if(FireEvent == null) { return; }
-  
-        StartCoroutine(FireEvent?.Invoke());
+        IsFiring = context.performed;
     }
 
     public void OnADS(InputAction.CallbackContext context)
@@ -107,5 +102,10 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         if(!context.performed) { return; }
 
         PauseEvent?.Invoke();
+    }
+
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        IsSprinting = context.performed;
     }
 }

@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 7870323556358144460}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &712693046640730254
 MeshFilter:
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoType: 2
+  isAutomatic: 1
   weaponShotClip: {fileID: 8300000, guid: 34b439bf70b80a6409eadecc6be92d68, type: 3}
   playerHealth: {fileID: 0}
   muzzleFlashVFX: {fileID: 1782395880954752, guid: 3dd9cf2e209c504448f1c4c6835675cf,
@@ -110,7 +111,7 @@ MonoBehaviour:
   ammoText: {fileID: 0}
   shootDistance: 120
   shootDamage: 20
-  shootDelay: 0
+  shootDelay: 0.1
 --- !u!114 &520725316658885236
 MonoBehaviour:
   m_ObjectHideFlags: 0

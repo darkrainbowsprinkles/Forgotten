@@ -37,6 +37,7 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] [field: Range(0.1f, 10f)] public float JumpForce { get; private set; }
     [field: SerializeField] [field: Range(0.1f, 20f)] public float FreeMovementSpeed { get; private set; }
+    [field: SerializeField] public float SprintMultiplier { get; private set; }
 
     public float MouseSensitivity { get; private set; }
 

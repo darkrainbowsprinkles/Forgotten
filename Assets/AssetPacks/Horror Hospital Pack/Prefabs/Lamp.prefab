@@ -148,7 +148,7 @@ Transform:
   - {fileID: 452254}
   - {fileID: 407714}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3348786
 MeshFilter:
@@ -245,7 +245,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9264706, g: 0.96957403, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 100
   m_SpotAngle: 164
   m_InnerSpotAngle: 157.8725

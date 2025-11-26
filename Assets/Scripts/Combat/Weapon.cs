@@ -6,6 +6,7 @@ using TMPro;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private AmmoType ammoType;
+    [SerializeField] private bool isAutomatic = false;
     [SerializeField] private AudioClip weaponShotClip;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private GameObject muzzleFlashVFX;
@@ -21,14 +22,13 @@ public class Weapon : MonoBehaviour
     public event Action<AmmoType> onWeaponShot;
 
     private Transform mainCameraTransform;
-
     private bool canShoot = true;
+    private bool wasFiringLastFrame = false;
 
     private void OnEnable()
     {
         canShoot = true;
-
-        inputReader.FireEvent += HandleFire;
+        wasFiringLastFrame = false;
         playerHealth.onPlayerDead += HandePlayerDead;
     }
 
@@ -40,26 +40,43 @@ public class Weapon : MonoBehaviour
     private void Update()
     {
         DisplayAmmo();
+
+        bool isFiring = inputReader.IsFiring;
+
+        if (isAutomatic)
+        {
+            if (isFiring)
+            {
+                StartCoroutine(HandleFire());
+            }
+        }
+        else
+        {
+            if (isFiring && !wasFiringLastFrame)
+            {
+                StartCoroutine(HandleFire());
+            }
+        }
+
+        wasFiringLastFrame = isFiring;
     }
 
     private void OnDisable()
     {
-        inputReader.FireEvent -= HandleFire;
         playerHealth.onPlayerDead -= HandePlayerDead;
     }
 
     private void DisplayAmmo()
     {
         int currentAmmo = ammoSlot.GetAmmo(ammoType);
-
         ammoText.text = $"Ammo: {currentAmmo}";
     }
 
     private IEnumerator HandleFire()
     {
-        if(!canShoot) { yield break; }
+        if (!canShoot) { yield break; }
 
-        if(ammoSlot.GetAmmo(ammoType) <= 0) { yield break; }
+        if (ammoSlot.GetAmmo(ammoType) <= 0) { yield break; }
 
         canShoot = false;
 
@@ -90,11 +107,11 @@ public class Weapon : MonoBehaviour
 
         PlayMuzzleFlashVFX();
 
-        if(hit.transform == null) { return; }
+        if (hit.transform == null) { return; }
 
-        if(hit.transform.GetComponent<PlayerStateMachine>()) { return; }
-        
-        if(hit.transform.TryGetComponent<EnemyHealth>(out EnemyHealth health))
+        if (hit.transform.GetComponent<PlayerStateMachine>()) { return; }
+
+        if (hit.transform.TryGetComponent(out EnemyHealth health))
         {
             health.TakeDamage(shootDamage);
         }
@@ -110,14 +127,13 @@ public class Weapon : MonoBehaviour
         Vector3 direction = mainCameraTransform.forward;
         float maxDistance = shootDistance;
 
-        Physics.Raycast(origin,direction, out hit, maxDistance);
+        Physics.Raycast(origin, direction, out hit, maxDistance);
 
         return hit;
     }
 
     private void HandePlayerDead()
     {
-        inputReader.FireEvent -= HandleFire;
+        canShoot = false;
     }
-
 }
